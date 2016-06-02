@@ -30,13 +30,13 @@ var adminRouter = express.Router();
   adminRouter.get('/admin', function(req, res) {
     res.send('I am the dashboard!');
   });
-  adminRouter.get('/users', function(req, res) {
-    res.send('I show all the users!');
+  adminRouter.get('/users/:name', function(req, res) {
+    res.send('Hello ' + req.params.name + ' !');
   });
   adminRouter.get('/posts', function(req, res) {
     res.send('I show all the posts!');
   });
-  
+
   app.use('/admin', adminRouter);
 
  console.log('1337 is the magic port!');
